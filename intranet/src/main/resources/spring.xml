@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="mailDAO" class="gr.hua.intranet.model.mailDAOImp">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mailSender" ref="mailSender" />
+	</bean>
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="registerdos@gmail.com" />
+		<property name="password" value="192837465dos" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="user" class="gr.hua.intranet.model.User" scope="prototype">
+	</bean>
+
+	<bean id="admin" class="gr.hua.intranet.model.Admin" scope="prototype">
+	</bean>
+
+	<bean id="deliver" class="gr.hua.intranet.model.Deliver" scope="prototype">
+	</bean>
+
+	<bean id="deliverDAO" class="gr.hua.intranet.model.DeliverDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="userDAO" class="gr.hua.intranet.model.UserDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="company" class="gr.hua.intranet.model.Company" scope="prototype">
+	</bean>
+
+	<bean id="companyDAO" class="gr.hua.intranet.model.CompanyDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="requestDAO" class="gr.hua.intranet.model.RequestDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="AdminDAO" class="gr.hua.intranet.model.AdminDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="ConnectedUsersDAO" class="gr.hua.intranet.model.ConnectedUsersDAOIMpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="customer" class="gr.hua.intranet.model.Representative"
+		scope="prototype">
+	</bean>
+
+	<bean id="customerDAO" class="gr.hua.intranet.model.RepresentativeDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="mail" class="gr.hua.intranet.model.mail" scope="prototype">
+	</bean>
+
+	<bean id="ReceiverDAO" class="gr.hua.intranet.model.NLReciverDAOImp">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="ConnectedCustomersDAO" class="gr.hua.intranet.model.ConnectedCustomersDAOImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://62.217.125.30:3306/it21374" />
+		<property name="username" value="it21374" />
+		<property name="password" value="changeit" />
+	</bean>
+
+</beans>

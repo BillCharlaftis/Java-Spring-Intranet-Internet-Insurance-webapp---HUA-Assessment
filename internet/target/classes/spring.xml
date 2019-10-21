@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+	<bean class="org.springframework.mail.javamail.JavaMailSenderImpl"
+		id="mailSender">
+
+		<!-- SMTP settings -->
+
+
+		<property value="smtp.gmail.com" name="host" />
+
+		<property value="587" name="port" />
+
+		<property value="registerdos@gmail.com" name="username" />
+
+		<property value="192837465dos" name="password" />
+
+
+
+		<property name="javaMailProperties">
+
+			<!-- additional properties specific to JavaMail -->
+			<props>
+
+				<prop key="mail.transport.protocol">smtp</prop>
+
+				<prop key="mail.smtp.auth">true</prop>
+
+				<prop key="mail.smtp.starttls.enable">true</prop>
+
+			</props>
+		</property>
+	</bean>
+
+	<bean id="mailDAO" class="gr.hua.internet.model.mailDAOImp">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="NLReciverDAO" class="gr.hua.internet.model.NLReciverDAOImp">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://62.217.125.30:3306/it21374" />
+		<property name="username" value="it21374" />
+		<property name="password" value="changeit" />
+	</bean>
+
+</beans>

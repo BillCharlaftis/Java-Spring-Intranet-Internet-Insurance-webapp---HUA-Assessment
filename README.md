@@ -1,8 +1,10 @@
 # Java-Spring-Intranet-Internet-Insurance-webapp - HUA-Assessment
 
-HUA Assaiment 2016 (I don't even remember the corse name).
+HUA Assaiment 2016 (corse name Distributed Systems).
 
 There are two Java - Spring WebApps.
 
 The concept was that we were making a web insurance companies infarstracture consisting from an Intranet and one Internet WebApps.
+
+If you speek Greek check the PDF.
 

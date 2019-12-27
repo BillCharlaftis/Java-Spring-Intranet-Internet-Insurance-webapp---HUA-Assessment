@@ -1,4 +1,4 @@
-# Java-Spring-Intranet-Internet-Insurance-webapp - HUA-Assessment
+# Java-Spring-Intranet-Internet-Insurance-webapp - HUA-Assaiment
 
 HUA Assaiment 2016 (corse name Distributed Systems).
 
